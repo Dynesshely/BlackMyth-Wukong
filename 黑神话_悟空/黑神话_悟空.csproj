@@ -326,6 +326,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\反馈工具\反馈工具.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="src\decoration\btn_df.png" />
     <Resource Include="src\decoration\tab_ck_l.png" />
     <Resource Include="src\decoration\tab_ck_r.png" />

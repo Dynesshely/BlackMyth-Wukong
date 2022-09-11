@@ -5,6 +5,8 @@ VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "黑神话_悟空", "黑神话_悟空\黑神话_悟空.csproj", "{953DAE9D-7C43-401C-B9CE-6E7E0D6387EC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "反馈工具", "反馈工具\反馈工具.csproj", "{E528124E-5F4F-4C9C-910B-BD27CFD0F3B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{953DAE9D-7C43-401C-B9CE-6E7E0D6387EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{953DAE9D-7C43-401C-B9CE-6E7E0D6387EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{953DAE9D-7C43-401C-B9CE-6E7E0D6387EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E528124E-5F4F-4C9C-910B-BD27CFD0F3B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E528124E-5F4F-4C9C-910B-BD27CFD0F3B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E528124E-5F4F-4C9C-910B-BD27CFD0F3B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E528124E-5F4F-4C9C-910B-BD27CFD0F3B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
