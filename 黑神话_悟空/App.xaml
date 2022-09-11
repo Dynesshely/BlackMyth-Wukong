@@ -4,6 +4,19 @@
              xmlns:local="clr-namespace:黑神话_悟空"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <Style TargetType="Button" x:Key="PaintButton">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <ImageBrush ImageSource="/src/decoration/btn_df.png" Stretch="UniformToFill"/>
+                    </Setter.Value>
+                </Setter>
+                <Style.Triggers>
+                    <Trigger Property="IsMouseOver" Value="True">
+                        <Setter Property="Opacity" Value="0.9"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

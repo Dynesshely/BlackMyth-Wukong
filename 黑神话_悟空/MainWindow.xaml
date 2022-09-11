@@ -9,6 +9,25 @@
         WindowStartupLocation="CenterScreen"
         Title="Black Myth: Wukong | 黑神话: 悟空" Height="1080" Width="1920">
     <Grid>
-        
+        <MediaElement x:Name="BackgroundPresenter" Stretch="UniformToFill" IsMuted="True"/>
+        <Viewbox>
+            <Grid Width="2560" Height="1440">
+                <Image x:Name="LogoPresenter" Stretch="Uniform" Width="600" Height="600"/>
+                <Grid x:Name="UIContainer" Opacity="0">
+                    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image x:Name="IconPresenter" Width="500" Height="500" Margin="0,0,0,120" Stretch="Uniform"/>
+                        <Button FontSize="40" Padding="80,15" Margin="20" Style="{StaticResource PaintButton}"
+                                Foreground="White" FontFamily="KaiTi" Content="开 始"/>
+                        <Button FontSize="40" Padding="80,15" Margin="20" Style="{StaticResource PaintButton}"
+                                Foreground="White" FontFamily="KaiTi" Content="章 节"/>
+                        <Button FontSize="40" Padding="80,15" Margin="20" Style="{StaticResource PaintButton}"
+                                Foreground="White" FontFamily="KaiTi" Content="设 置"/>
+                        <Button FontSize="40" Padding="80,15" Margin="20" Style="{StaticResource PaintButton}"
+                                Foreground="White" FontFamily="KaiTi" Content="退 出"
+                                Click="Button_Click_Exit"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Viewbox>
     </Grid>
 </Window>

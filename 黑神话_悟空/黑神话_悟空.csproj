@@ -9,10 +9,31 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="src\decoration\btn_df.png" />
+    <None Remove="src\decoration\tab_ck_l.png" />
+    <None Remove="src\decoration\tab_ck_r.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="favicon.ico" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="src\logo\epic_logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="src\logo\game_science_logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="src\logo\nvidia_geforce_logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="src\logo\unreal_logo.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="src\music\main_menu_bgmsc.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="src\steam\img_bg_cover.jpeg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -302,6 +323,12 @@
 
   <ItemGroup>
     <Folder Include="controls\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="src\decoration\btn_df.png" />
+    <Resource Include="src\decoration\tab_ck_l.png" />
+    <Resource Include="src\decoration\tab_ck_r.png" />
   </ItemGroup>
 
 </Project>
