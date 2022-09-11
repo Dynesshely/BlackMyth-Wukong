@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32804.467
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "黑神话_悟空", "黑神话_悟空\黑神话_悟空.csproj", "{953DAE9D-7C43-401C-B9CE-6E7E0D6387EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{953DAE9D-7C43-401C-B9CE-6E7E0D6387EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{953DAE9D-7C43-401C-B9CE-6E7E0D6387EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{953DAE9D-7C43-401C-B9CE-6E7E0D6387EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{953DAE9D-7C43-401C-B9CE-6E7E0D6387EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95C60BBA-B902-4867-8D3C-313188D739D8}
+	EndGlobalSection
+EndGlobal
