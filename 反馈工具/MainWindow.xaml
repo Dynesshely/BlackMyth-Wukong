@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:反馈工具"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
+        Icon="favicon.ico"
         Title="黑神话: 悟空 - 大陆地区内测反馈工具" Height="600" Width="400">
     <Grid>
         <Grid Margin="10">
