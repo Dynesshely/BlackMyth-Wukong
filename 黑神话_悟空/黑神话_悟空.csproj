@@ -15,7 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="favicon.ico" />
+    <Content Include="favicon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -166,9 +168,6 @@
     <None Update="src\video\video_Day6.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="src\video\video_PV03_Music.mp4">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="src\video\《阶段成果》_游戏科学虎年贺岁小短片..492549331.jpeg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -206,6 +205,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="src\video\游戏科学新作《黑神话_悟空》13分钟实机演示.《黑神话_悟空》实机演示%285G%29.226204073.flv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="src\video\黑悟空内测流出.24fps.mp4">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="src\wallpaper\blackmyth_wukong_wallpaper_001.jpg">
@@ -327,6 +329,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\反馈工具\反馈工具.csproj" />
+    <ProjectReference Include="..\崩溃提示\崩溃提示.csproj" />
   </ItemGroup>
 
   <ItemGroup>

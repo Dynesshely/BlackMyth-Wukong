@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -41,6 +42,7 @@ namespace 黑神话_悟空
                 {
                     WindowStyle = WindowStyle.None;
                     WindowState = WindowState.Maximized;
+                    Cursor = Cursors.Arrow;
                 }));
 
                 Thread.Sleep(App.Random.Next(App.Random.Next(500, 1000), App.Random.Next(1500, 2000)));
@@ -88,6 +90,7 @@ namespace 黑神话_悟空
                         BeginBackgroundMusicLoop();
                         BeginBackgroundVideoLoop();
                         PresentMainMenuUI();
+                        CanButtonClick = true;
                         timer.Stop();
                         timer.Dispose();
                         break;
@@ -147,6 +150,7 @@ namespace 黑神话_悟空
         }
 
         private bool ContinueTransform = true;
+        private bool CanButtonClick = false;
 
         private void TransformBgVedio(int index)
         {
@@ -157,22 +161,24 @@ namespace 黑神话_悟空
             {
                 BackgroundPresenter.MediaEnded += (x, y) =>
                 {
-                    Dispatcher.BeginInvoke(new Action(() =>
-                    {
-                        BackgroundPresenter.BeginAnimation(OpacityProperty, new DoubleAnimation()
-                        {
-                            Duration = new(new(0, 0, 0, 0, 800)),
-                            From = 1,
-                            To = 0,
-                            FillBehavior = FillBehavior.HoldEnd,
-                            EasingFunction = new CubicEase()
-                            {
-                                EasingMode = EasingMode.EaseIn
-                            }
-                        });
-                    }));
                     if (ContinueTransform)
+                    {
+                        Dispatcher.BeginInvoke(new Action(() =>
+                        {
+                            BackgroundPresenter.BeginAnimation(OpacityProperty, new DoubleAnimation()
+                            {
+                                Duration = new(new(0, 0, 0, 0, 800)),
+                                From = 1,
+                                To = 0,
+                                FillBehavior = FillBehavior.HoldEnd,
+                                EasingFunction = new CubicEase()
+                                {
+                                    EasingMode = EasingMode.EaseIn
+                                }
+                            });
+                        }));
                         TransformBgVedio(index == 6 ? 1 : index + 1);
+                    }
                 };
                 BackgroundPresenter.Source = new Uri(video_Path);
                 BackgroundPresenter.BeginAnimation(OpacityProperty, new DoubleAnimation()
@@ -189,15 +195,15 @@ namespace 黑神话_悟空
             }));
         }
 
-        private void PresentMainMenuUI()
+        private void PresentMainMenuUI(bool isFadeOut = false)
         {
             Dispatcher.BeginInvoke(new Action(() =>
             {
                 UIContainer.BeginAnimation(OpacityProperty, new DoubleAnimation()
                 {
                     Duration = new(new(0, 0, 0, 0, 800)),
-                    From = 0,
-                    To = 1,
+                    From = isFadeOut ? 1 : 0,
+                    To = isFadeOut ? 0 : 1,
                     FillBehavior = FillBehavior.HoldEnd,
                     EasingFunction = new CubicEase()
                     {
@@ -209,7 +215,49 @@ namespace 黑神话_悟空
 
         private void Button_Click_Exit(object sender, RoutedEventArgs e)
         {
-            Environment.Exit(0);
+            if (CanButtonClick)
+                Environment.Exit(0);
+        }
+
+        private void Button_Click_Start(object sender, RoutedEventArgs e)
+        {
+            if (CanButtonClick)
+            {
+                PresentMainMenuUI(true);
+                App.SoundPlayer.Stop();
+                CanButtonClick = false;
+                Cursor = Cursors.None;
+
+                ContinueTransform = false;
+
+                BackgroundPresenter.MediaEnded += (x, y) =>
+                {
+                    Cursor = Cursors.Arrow;
+
+                    new Thread(() =>
+                    {
+                        Thread.Sleep(App.Random.Next(2500, 3000));
+                        Process.Start($"{App.WorkBase}\\崩溃提示.exe");
+                        Environment.Exit(1);
+                    }).Start();
+
+                    MessageBox.Show("error: 0x114514", "fatal", MessageBoxButton.OK, MessageBoxImage.Error);
+                };
+
+                new Thread(() =>
+                {
+                    Thread.Sleep(800);
+
+                    Dispatcher.BeginInvoke(new Action(() =>
+                    {
+                        UIContainer.Opacity = 0;
+                        BackgroundPresenter.Source = new Uri($"{App.WorkBase}\\src\\video\\黑悟空内测流出.24fps.mp4");
+                        BackgroundPresenter.IsMuted = false;
+                        BackgroundPresenter.Opacity = 1;
+                    }));
+                }).Start();
+
+            }
         }
     }
 }
